@@ -123,12 +123,13 @@ class FeedbackRepository implements FeedbackRepositoryInterface
         }
     }
 
+
     /**
      * @param FeedbackInterface $model
      * @return FeedbackInterface
      * @throws \Magento\Framework\Exception\AlreadyExistsException
      */
-    public function save(FeedbackInterface $model)
+    public function save(FeedbackInterface $model) : FeedbackInterface
     {
         $this->resourceModel->save($model);
 

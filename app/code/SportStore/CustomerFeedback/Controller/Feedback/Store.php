@@ -11,6 +11,7 @@ namespace SportStore\CustomerFeedback\Controller\Feedback;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\Controller\ResultInterface;
 use SportStore\CustomerFeedback\Api\Data\FeedbackInterfaceFactory;
 use SportStore\CustomerFeedback\Api\FeedbackRepositoryInterface;
 
@@ -48,9 +49,9 @@ class Store extends Action
 
     /**
      * Saving feedback data from form to customers_feedbacks table
-     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
+     * @return ResultInterface
      */
-    public function execute()
+    public function execute() : ResultInterface
     {
         $model = $this->feedbackFactory->create();
         $model->setFirstname($this->getRequest()->getParam('firstname'))

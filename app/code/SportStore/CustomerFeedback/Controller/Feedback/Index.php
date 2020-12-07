@@ -13,6 +13,7 @@ namespace SportStore\CustomerFeedback\Controller\Feedback;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\View\Result\Page;
 
 /**
  * Class Index
@@ -37,9 +38,9 @@ class Index extends Action
     }
 
     /**
-     * @return \Magento\Framework\View\Result\Page
+     * @return Page
      */
-    public function execute()
+    public function execute() : Page
     {
         $feedbackForm = $this->feedbackFormFactory->create();
         return $feedbackForm;
