@@ -12,11 +12,11 @@ namespace SportStore\CustomerFeedback\Controller\Adminhtml\Feedback;
 use Magento\Backend\App\AbstractAction;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
 
 /**
- * Class Index
+ * Class Index for displaying feedbacks list
  * @package SportStore\CustomerFeedback\Controller\Adminhtml\Feedback
  */
 class Index extends AbstractAction implements HttpGetActionInterface
@@ -27,6 +27,7 @@ class Index extends AbstractAction implements HttpGetActionInterface
     const GRID_VIEW_ACL_RESOURCE = 'SportStore_CustomerFeedback:feedback_grid';
 
     /**
+     * PageFactory variable
      * @var PageFactory
      */
     protected $pageFactory;
@@ -43,6 +44,7 @@ class Index extends AbstractAction implements HttpGetActionInterface
     }
 
     /**
+     * Creating feedback grid page and setting active feedback menu with custom title
      * @return Page
      */
     public function execute() : Page
@@ -55,6 +57,7 @@ class Index extends AbstractAction implements HttpGetActionInterface
     }
 
     /**
+     * Adding GRID_VIEW_ACL_RESOURCE to allowed resources
      * @return bool
      */
     protected function _isAllowed() : bool

@@ -66,6 +66,15 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * @param string $title
+     * @return FeedbackInterface
+     */
+    public function setTitle(string $title): FeedbackInterface
+    {
+        return $this->setData(FeedbackInterface::TITLE, $title);
+    }
+
+    /**
      * @param string $message
      * @return FeedbackInterface
      */
@@ -121,6 +130,14 @@ class Feedback extends AbstractModel implements FeedbackInterface
     public function getEmail(): string
     {
         return $this->getData(FeedbackInterface::EMAIL);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->getData(FeedbackInterface::TITLE);
     }
 
     /**

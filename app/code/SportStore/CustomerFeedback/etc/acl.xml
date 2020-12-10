@@ -5,10 +5,11 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="SportStore_CustomerFeedback::feedback" translate="title"
-                          title="Customers Feedbacks" sortOrder="30">
+                title="Customers Feedbacks" sortOrder="30">
                     <resource id="SportStore_CustomerFeedback::feedback_grid" translate="title"
-                    title="List of Customers Feedbacks" sortOrder="10" >
-                    </resource>
+                    title="List of Customers Feedbacks" sortOrder="10" />
+                    <resource id="SportStore_CustomerFeedback::feedback_details" translate="title"
+                    title="Feedback Details" sortOrder="20" />
                 </resource>
             </resource>
         </resources>

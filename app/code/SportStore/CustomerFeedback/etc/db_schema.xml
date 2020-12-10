@@ -7,6 +7,7 @@
             <column xsi:type="varchar" name="lastname" length="50" comment="Customer last name" />
             <column xsi:type="int" name="age" padding="3" unsigned="true" comment="Customer age" />
             <column xsi:type="varchar" name="email" length="100" comment="Customer email" />
+            <column xsi:type="varchar" name="title" length="100" comment="Customer feedback title" />
             <column xsi:type="text" name="message" comment="Customer feedback message" />
             <column xsi:type="int" name="status" padding="2" unsigned="true" default="9" comment="Status of customer feedback" />
             <constraint xsi:type="primary" referenceId="PRIMARY">

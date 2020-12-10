@@ -1,13 +1,11 @@
 <?php
 /* @var \SportStore\CustomerFeedback\Block\FeedbackFormBlock $block */
 ?>
-<h2>Please, fill out the form for feedback: </h2>
-<!--<form action="/customer/feedback/store" method="post">-->
-<form action="<?= $block->storeFeedback(); ?>" method="post">
-    <!-- Add translation -->
+<h2><?= __('Please, fill out the form for feedback:'); ?></h2>
+<form action="<?= $block->getFeedbackActionUrl(); ?>" method="post">
     <div>
         <label for="firstname"><?= __('Enter your first name:'); ?> </label>
-        <input type="text" name="firstname" id="lastname">
+        <input type="text" name="firstname" id="firstname">
     </div>
     <div>
         <label for="lastname"><?= __('Enter your last name:'); ?> </label>
@@ -20,6 +18,10 @@
     <div>
         <label for="email"><?= __('Enter your email:'); ?> </label>
         <input type="email" name="email" id="email">
+    </div>
+    <div>
+        <label for="title"><?= __('Write feedback title:'); ?> </label>
+        <input type="text" name="title" id="title">
     </div>
     <div>
         <label for="message"><?= __('Write your message:'); ?> </label>

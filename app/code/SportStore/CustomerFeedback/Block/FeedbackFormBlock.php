@@ -1,6 +1,6 @@
 <?php
 /**
- * Block for Feedback Form
+ * Block for getting action url for storing data from form to database
 
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
@@ -24,11 +24,11 @@ class FeedbackFormBlock extends Template
     const FORM_ACTION = 'customer/feedback/store';
 
     /**
+     * Getting action url for processing form submission
      * @return string
      */
-    public function storeFeedback() : string
+    public function getFeedbackActionUrl() : string
     {
         return $this->getUrl(self::FORM_ACTION);
     }
 }
-

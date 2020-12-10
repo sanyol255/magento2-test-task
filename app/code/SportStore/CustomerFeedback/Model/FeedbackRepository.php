@@ -66,6 +66,7 @@ class FeedbackRepository implements FeedbackRepositoryInterface
         $this->modelFactory = $modelFactory;
         $this->collectionFactory = $collectionFactory;
         $this->processor = $processor;
+        $this->searchResultsFactory = $searchResultsFactory;
     }
 
     /**
@@ -77,9 +78,10 @@ class FeedbackRepository implements FeedbackRepositoryInterface
     {
         $model = $this->modelFactory->create();
         $this->resourceModel->load($model, $id, FeedbackInterface::ID);
-        if (!$model->getId()) {
+        if (!$model->getFeedbackId()) {
             throw new NoSuchEntityException(__('There is no such entity %1!', $id));
         }
+        return $model;
     }
 
     /**

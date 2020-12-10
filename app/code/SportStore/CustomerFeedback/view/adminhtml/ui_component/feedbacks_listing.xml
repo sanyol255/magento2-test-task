@@ -57,14 +57,14 @@
     </listingToolbar>
 
     <columns name="feedbacks_listing_columns">
-        <selectionsColumn name="ids">
+        <selectionsColumn name="ids" sortOrder="10">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">feedbacks_id</item>
                 </item>
             </argument>
         </selectionsColumn>
-        <column name="feedback_id">
+        <column name="feedback_id" sortOrder="20">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
@@ -72,47 +72,38 @@
                 </item>
             </argument>
         </column>
-        <column name="firstname">
+        <column name="firstname" sortOrder="30">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">First Name</item>
                 </item>
             </argument>
         </column>
-        <column name="lastname">
+        <column name="title" sortOrder="40">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Last Name</item>
+                    <item name="label" xsi:type="string" translate="true">Title</item>
                 </item>
             </argument>
         </column>
-        <column name="age">
+        <column name="status" sortOrder="50" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="SportStore\CustomerFeedback\Api\Data\FeedbackOptionsInterface"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="SportStore\CustomerFeedback\Ui\Component\Listing\Columns\FeedbackActions" sortOrder="50">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Age</item>
+                    <item name="viewUrl" xsi:type="string">customer/feedback/details</item>
+                    <item name="idUrlParam" xsi:type="string">feedback_id</item>
                 </item>
             </argument>
-        </column>
-        <column name="email">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Email</item>
-                </item>
-            </argument>
-        </column>
-        <column name="message">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Message</item>
-                </item>
-            </argument>
-        </column>
-        <column name="status">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Status</item>
-                </item>
-            </argument>
-        </column>
+            <settings>
+                <indexField>feedback_id</indexField>
+            </settings>
+        </actionsColumn>
     </columns>
 </listing>
