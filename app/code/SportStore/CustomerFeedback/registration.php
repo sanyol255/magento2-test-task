@@ -1,7 +1,7 @@
 <?php
 /**
  * Module CustomerFeedback registration
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com

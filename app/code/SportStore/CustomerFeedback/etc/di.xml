@@ -7,7 +7,4 @@
 
     <preference for="SportStore\CustomerFeedback\Api\FeedbackRepositoryInterface"
                 type="SportStore\CustomerFeedback\Model\FeedbackRepository" />
-
-    <preference for="SportStore\CustomerFeedback\Api\Data\FeedbackOptionsInterface"
-                type="SportStore\CustomerFeedback\Model\FeedbackStatusOptions" />
 </config>

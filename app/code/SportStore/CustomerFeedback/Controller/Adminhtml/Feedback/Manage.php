@@ -1,6 +1,6 @@
 <?php
 /**
- * Action Adminhtml/Feedback/Details for CustomerFeedback
+ * Action Adminhtml/Feedback/Manage for CustomerFeedback
 
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
@@ -16,25 +16,26 @@ use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\View\Result\Page;
 
 /**
- * Class Details
+ * Class Manage
  *
  * @package SportStore\CustomerFeedback\Controller\Adminhtml\Feedback
  */
-class Details extends AbstractAction implements HttpGetActionInterface
+class Manage extends AbstractAction implements HttpGetActionInterface
 {
     /**
-     * Details ACL Resource from etc/acl.xml
+     * Manage ACL Resource from etc/acl.xml
      */
-    const DETAILS_ACL_RESOURCE = 'SportStore_CustomerFeedback::feedback_details';
+    const MANAGE_ACL_RESOURCE = 'SportStore_CustomerFeedback::feedback_manage';
+
     /**
-     * PageFactory variable
+     * Page Factory variable
      *
      * @var PageFactory
      */
     protected $resultPageFactory;
 
     /**
-     * Details constructor.
+     * Manage constructor
      *
      * @param Context $context
      * @param PageFactory $resultPageFactory
@@ -48,26 +49,26 @@ class Details extends AbstractAction implements HttpGetActionInterface
     }
 
     /**
-     * Creating feedback details page and setting active feedback menu with custom title
+     * Creating manage feedback page
      *
      * @return Page
      */
     public function execute() : Page
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend(__('Feedback Details'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Managing Customer Feedback'));
         $resultPage->setActiveMenu('SportStore_CustomerFeedback::feedback_menu');
 
         return $resultPage;
     }
 
     /**
-     * Adding DETAILS_ACL_RESOURCE to allowed resources
+     *Adding MANAGE_VIEW_ACL_RESOURCE to allowed resources
      *
      * @return bool
      */
     protected function _isAllowed() : bool
     {
-        return $this->_authorization->isAllowed(static::DETAILS_ACL_RESOURCE);
+        return $this->_authorization->isAllowed(static::MANAGE_ACL_RESOURCE);
     }
 }

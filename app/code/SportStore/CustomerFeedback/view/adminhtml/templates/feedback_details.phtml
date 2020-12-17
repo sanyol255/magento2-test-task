@@ -4,7 +4,6 @@
 <table class="data-grid">
     <thead>
         <tr>
-            <th class="data-grid-th"><?= __('ID'); ?></th>
             <th class="data-grid-th"><?= __('First name'); ?></th>
             <th class="data-grid-th"><?= __('Last name'); ?></th>
             <th class="data-grid-th"><?= __('Age'); ?></th>
@@ -12,18 +11,19 @@
             <th class="data-grid-th"><?= __('Title'); ?></th>
             <th class="data-grid-th"><?= __('Message'); ?></th>
             <th class="data-grid-th"><?= __('Status'); ?></th>
+            <th class="data-grid-th"><?= __('Answer'); ?></th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td> <?= $block->getModel()->getId(); ?></td>
-            <td> <?= $block->getModel()->getFirstname(); ?></td>
-            <td> <?= $block->getModel()->getLastname(); ?></td>
-            <td> <?= $block->getModel()->getAge(); ?></td>
-            <td> <?= $block->getModel()->getEmail(); ?></td>
-            <td> <?= $block->getModel()->getTitle(); ?></td>
-            <td> <?= $block->getModel()->getMessage(); ?></td>
-            <td> <?= $block->getModel()->getStatus(); ?></td>
+            <td><?= $block->getModel()->getFirstname(); ?></td>
+            <td><?= $block->getModel()->getLastname(); ?></td>
+            <td><?= $block->getModel()->getAge(); ?></td>
+            <td><?= $block->getModel()->getEmail(); ?></td>
+            <td><?= $block->getModel()->getTitle(); ?></td>
+            <td><?= $block->getModel()->getMessage(); ?></td>
+            <td><?= $block->getStatusTitle(); ?></td>
+            <td><?= $block->getModel()->getAnswer(); ?></td>
         </tr>
     </tbody>
 </table>

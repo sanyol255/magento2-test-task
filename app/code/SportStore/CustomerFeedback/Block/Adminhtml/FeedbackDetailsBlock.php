@@ -13,6 +13,7 @@ use Magento\Backend\Block\Template;
 use Magento\Backend\Block\Template\Context;
 use SportStore\CustomerFeedback\Api\Data\FeedbackInterface;
 use SportStore\CustomerFeedback\Api\FeedbackRepositoryInterface;
+use SportStore\CustomerFeedback\Model\StatusOptions;
 
 /**
  * Class FeedbackDetailsBlock
@@ -22,16 +23,21 @@ class FeedbackDetailsBlock extends Template
 {
     /**
      * Feedback Repository Interface variable
+     *
      * @var FeedbackRepositoryInterface
      */
     protected $repository;
+
     /**
      * Variable for storing object with specified feedback data
+     *
+     * @var FeedbackRepositoryInterface
      */
     protected $_model;
 
     /**
      * FeedbackDetailsBlock constructor
+     *
      * @param Context $context
      * @param FeedbackRepositoryInterface $repository
      * @param array $data
@@ -46,7 +52,8 @@ class FeedbackDetailsBlock extends Template
     }
 
     /**
-     * Method for getting object specified feedback by id
+     * Getting model data
+     *
      * @return mixed
      */
     public function getModel()
@@ -56,5 +63,22 @@ class FeedbackDetailsBlock extends Template
         }
 
         return $this->_model;
+    }
+
+    /**
+     * Returning string status title
+     *
+     * @return string
+     */
+    public function getStatusTitle() : string
+    {
+        $statusTitle = "";
+        $status = $this->getModel()->getStatus();
+        if ($status == StatusOptions::ANSWERED) {
+            $statusTitle = StatusOptions::ANSWERED_TITLE;
+        } elseif ($status == StatusOptions::NOT_ANSWERED) {
+            $statusTitle = StatusOptions::NOT_ANSWERED_TITLE;
+        }
+        return $statusTitle;
     }
 }

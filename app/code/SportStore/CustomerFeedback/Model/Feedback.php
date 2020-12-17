@@ -30,6 +30,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Setting customer first name
+     *
      * @param string $firstname
      * @return FeedbackInterface
      */
@@ -39,6 +41,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Setting customer last name
+     *
      * @param string $lastname
      * @return FeedbackInterface
      */
@@ -48,6 +52,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Setting customer age
+     *
      * @param int $age
      * @return FeedbackInterface
      */
@@ -57,6 +63,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Setting customer email
+     *
      * @param string $email
      * @return FeedbackInterface
      */
@@ -66,6 +74,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * SAetting title of the feedback
+     *
      * @param string $title
      * @return FeedbackInterface
      */
@@ -75,6 +85,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Setting feedback message
+     *
      * @param string $message
      * @return FeedbackInterface
      */
@@ -84,6 +96,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Setting feedback status - 9 (not answered) by default in db_schema
+     *
      * @param int $status
      * @return FeedbackInterface
      */
@@ -93,14 +107,29 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Setting admin answer to customer feedback
+     *
+     * @param string $answer
+     * @return FeedbackInterface
+     */
+    public function setAnswer(string $answer): FeedbackInterface
+    {
+        return $this->setData(FeedbackInterface::ANSWER, $answer);
+    }
+
+    /**
+     * Getting primary key - feedback_id field
+     *
      * @return int
      */
-    public function getFeedbackId(): int
+    public function getFeedbackId(): ?int
     {
         return $this->getData(FeedbackInterface::ID);
     }
 
     /**
+     * Getting customer first name
+     *
      * @return string
      */
     public function getFirstname(): string
@@ -109,6 +138,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Getting customer last name
+     *
      * @return string
      */
     public function getLastname(): string
@@ -117,6 +148,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Get customer age
+     *
      * @return int
      */
     public function getAge(): int
@@ -125,6 +158,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Getting customer email
+     *
      * @return string
      */
     public function getEmail(): string
@@ -133,6 +168,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Getting feedback title
+     *
      * @return string
      */
     public function getTitle(): string
@@ -141,6 +178,8 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Getting feedback message
+     *
      * @return string
      */
     public function getMessage(): string
@@ -149,11 +188,22 @@ class Feedback extends AbstractModel implements FeedbackInterface
     }
 
     /**
+     * Getting feedback status: 7 - answered, 9 - not answered
+     *
      * @return int
      */
     public function getStatus(): int
     {
         return $this->getData(FeedbackInterface::STATUS);
     }
-}
 
+    /**
+     * Getting admin answer to feedback
+     *
+     * @return string|null
+     */
+    public function getAnswer() : ?string
+    {
+        return $this->getData(FeedbackInterface::ANSWER);
+    }
+}

@@ -12,6 +12,7 @@ namespace SportStore\CustomerFeedback\Model;
 use Exception;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Api\SearchResultsInterface;
 use Magento\Framework\Api\SearchResultsInterfaceFactory;
 use Magento\Framework\Exception\NoSuchEntityException;
 use SportStore\CustomerFeedback\Api\Data\FeedbackInterface;
@@ -22,15 +23,20 @@ use SportStore\CustomerFeedback\Model\ResourceModel\Feedback\CollectionFactory;
 
 /**
  * Class FeedbackRepository
+ *
  * @package SportStore\CustomerFeedback\Model
  */
 class FeedbackRepository implements FeedbackRepositoryInterface
 {
     /**
+     * Feedback resource model
+     *
      * @var ResourceModel
      */
     protected $resourceModel;
     /**
+     * Factory for feedback interface
+     *
      * @var FeedbackInterfaceFactory
      */
     protected $modelFactory;
@@ -70,11 +76,13 @@ class FeedbackRepository implements FeedbackRepositoryInterface
     }
 
     /**
+     * Getting data by id
+     *
      * @param int $id
-     * @return mixed|void
+     * @return FeedbackInterface
      * @throws NoSuchEntityException
      */
-    public function getById(int $id)
+    public function getById(int $id) : FeedbackInterface
     {
         $model = $this->modelFactory->create();
         $this->resourceModel->load($model, $id, FeedbackInterface::ID);
@@ -86,10 +94,11 @@ class FeedbackRepository implements FeedbackRepositoryInterface
 
     /**
      * Getting list of feedbacks
+     *
      * @param SearchCriteriaInterface $criteria
-     * @return mixed
+     * @return SearchResultsInterface
      */
-    public function getList(SearchCriteriaInterface $criteria)
+    public function getList(SearchCriteriaInterface $criteria) : SearchResultsInterface
     {
         $collection = $this->collectionFactory->create();
 
@@ -101,8 +110,9 @@ class FeedbackRepository implements FeedbackRepositoryInterface
     }
 
     /**
+     * Delete by id
+     *
      * @param int $id
-     * @return mixed|void
      */
     public function deleteById(int $id)
     {
@@ -113,9 +123,11 @@ class FeedbackRepository implements FeedbackRepositoryInterface
         }
     }
 
+
     /**
+     * Delete method
+     *
      * @param FeedbackInterface $model
-     * @return mixed|void
      */
     public function delete(FeedbackInterface $model)
     {
@@ -127,6 +139,8 @@ class FeedbackRepository implements FeedbackRepositoryInterface
 
 
     /**
+     * Save data method
+     *
      * @param FeedbackInterface $model
      * @return FeedbackInterface
      * @throws \Magento\Framework\Exception\AlreadyExistsException

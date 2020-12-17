@@ -17,23 +17,26 @@ use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Class Index for displaying feedbacks list
+ *
  * @package SportStore\CustomerFeedback\Controller\Adminhtml\Feedback
  */
 class Index extends AbstractAction implements HttpGetActionInterface
 {
     /**
-     *ACL Resource from etc/acl.xml
+     *Grid ACL Resource from etc/acl.xml
      */
     const GRID_VIEW_ACL_RESOURCE = 'SportStore_CustomerFeedback:feedback_grid';
 
     /**
      * PageFactory variable
+     *
      * @var PageFactory
      */
     protected $pageFactory;
 
     /**
-     * Index constructor.
+     * Index constructor
+     *
      * @param Context $context
      * @param PageFactory $pageFactory
      */
@@ -45,6 +48,7 @@ class Index extends AbstractAction implements HttpGetActionInterface
 
     /**
      * Creating feedback grid page and setting active feedback menu with custom title
+     *
      * @return Page
      */
     public function execute() : Page
@@ -58,6 +62,7 @@ class Index extends AbstractAction implements HttpGetActionInterface
 
     /**
      * Adding GRID_VIEW_ACL_RESOURCE to allowed resources
+     *
      * @return bool
      */
     protected function _isAllowed() : bool

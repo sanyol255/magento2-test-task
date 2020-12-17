@@ -7,14 +7,6 @@
             <item name="deps" xsi:type="string">feedbacks_listing.feedbacks_listing_source</item>
         </item>
         <item name="spinner" xsi:type="string">feedbacks_listing_columns</item>
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string">Add Feedback</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">customer/feedback/add</item>
-            </item>
-        </item>
     </argument>
 
     <dataSource name="feedbacks_listing_source">
@@ -60,14 +52,13 @@
         <selectionsColumn name="ids" sortOrder="10">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">feedbacks_id</item>
+                    <item name="indexField" xsi:type="string">feedback_id</item>
                 </item>
             </argument>
         </selectionsColumn>
         <column name="feedback_id" sortOrder="20">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">textRange</item>
                     <item name="label" xsi:type="string" translate="true">ID</item>
                 </item>
             </argument>
@@ -88,7 +79,7 @@
         </column>
         <column name="status" sortOrder="50" component="Magento_Ui/js/grid/columns/select">
             <settings>
-                <options class="SportStore\CustomerFeedback\Api\Data\FeedbackOptionsInterface"/>
+                <options class="SportStore\CustomerFeedback\Model\StatusOptions"/>
                 <filter>select</filter>
                 <dataType>select</dataType>
                 <label translate="true">Status</label>
@@ -97,7 +88,8 @@
         <actionsColumn name="actions" class="SportStore\CustomerFeedback\Ui\Component\Listing\Columns\FeedbackActions" sortOrder="50">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="viewUrl" xsi:type="string">customer/feedback/details</item>
+                    <item name="manageUrl" xsi:type="string">customerfeed/feedback/manage</item>
+                    <item name="deleteUrl" xsi:type="string">customerfeed/feedback/delete</item>
                     <item name="idUrlParam" xsi:type="string">feedback_id</item>
                 </item>
             </argument>

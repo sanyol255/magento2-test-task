@@ -1,7 +1,7 @@
 <?php
 /**
  * Block for getting action url for storing data from form to database
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
@@ -14,6 +14,7 @@ use Magento\Framework\View\Element\Template;
 
 /**
  * Class FeedbackFormBlock
+ *
  * @package SportStore\CustomerFeedback\Block
  */
 class FeedbackFormBlock extends Template
@@ -25,6 +26,7 @@ class FeedbackFormBlock extends Template
 
     /**
      * Getting action url for processing form submission
+     *
      * @return string
      */
     public function getFeedbackActionUrl() : string

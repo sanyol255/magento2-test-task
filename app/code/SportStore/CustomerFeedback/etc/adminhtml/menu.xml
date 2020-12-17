@@ -15,6 +15,6 @@
                  resource="SportStore_CustomerFeedback::feedback_grid"
                  translate="title"
                  parent="SportStore_CustomerFeedback::feedback_menu"
-                 action="customer/feedback/index" />
+                 action="customerfeed/feedback/index" />
     </menu>
 </config>
