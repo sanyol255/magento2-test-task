@@ -1,7 +1,7 @@
 <?php
 /**
  * Action Feedback/Store for CustomerFeedback
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
@@ -11,27 +11,34 @@ namespace SportStore\CustomerFeedback\Controller\Feedback;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\ResponseInterface;
 use SportStore\CustomerFeedback\Api\Data\FeedbackInterfaceFactory;
 use SportStore\CustomerFeedback\Api\FeedbackRepositoryInterface;
 
 /**
- * Class Store
+ * Class Store for saving customer feedback data to database
+ *
  * @package SportStore\CustomerFeedback\Controller\Feedback
  */
 class Store extends Action
 {
     /**
+     * Variable for feedback model
+     *
      * @var FeedbackInterfaceFactory
      */
     protected $feedbackFactory;
 
     /**
+     * Variable for feedback repository
+     *
      * @var FeedbackRepositoryInterface
      */
     protected $feedbackRepository;
 
     /**
-     * Store constructor.
+     * Store action constructor
+     *
      * @param Context $context
      * @param FeedbackInterfaceFactory $feedbackFactory
      * @param FeedbackRepositoryInterface $feedbackRepository
@@ -46,7 +53,10 @@ class Store extends Action
         $this->feedbackRepository = $feedbackRepository;
     }
 
-
+    /**
+     * Saving feedback data from form to database and redirecting back to feedback form page with
+     * successful message
+     */
     public function execute()
     {
         $model = $this->feedbackFactory->create();

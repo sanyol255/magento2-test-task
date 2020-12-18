@@ -1,7 +1,7 @@
 <?php
 /**
  * Feedback resource model initialization
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
@@ -14,6 +14,7 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
  * Class Feedback
+ *
  * @package SportStore\CustomerFeedback\Model\ResourceModel
  */
 class Feedback extends AbstractDb

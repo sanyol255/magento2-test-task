@@ -1,7 +1,7 @@
 <?php
 /**
  * Action Feedback/Index for CustomerFeedback
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
@@ -16,18 +16,22 @@ use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\View\Result\Page;
 
 /**
- * Class Index
+ * Class Index for displaying customer feedback form
+ *
  * @package SportStore\CustomerFeedback\Controller\Feedback
  */
 class Index extends Action
 {
     /**
+     * Feedback form factory variable
+     *
      * @var PageFactory
      */
     protected $feedbackFormFactory;
 
     /**
-     * Index constructor.
+     * Index constructor
+     *
      * @param Context $context
      * @param PageFactory $feedbackFormFactory
      */
@@ -38,6 +42,8 @@ class Index extends Action
     }
 
     /**
+     * Rendering feedback form page
+     *
      * @return Page
      */
     public function execute() : Page

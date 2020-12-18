@@ -34,7 +34,7 @@ class Details extends AbstractAction implements HttpGetActionInterface
     protected $resultPageFactory;
 
     /**
-     * Details constructor.
+     * Details constructor
      *
      * @param Context $context
      * @param PageFactory $resultPageFactory

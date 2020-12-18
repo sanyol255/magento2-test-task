@@ -14,7 +14,7 @@
         <item name="template" xsi:type="string">templates/form/collapsible</item>
         <item name="buttons" xsi:type="array">
             <item name="save" xsi:type="string">SportStore\CustomerFeedback\Block\Adminhtml\Feedback\Form\Buttons\SaveButton</item>
-            <item name="getBack" xsi:type="string">SportStore\CustomerFeedback\Block\Adminhtml\Feedback\Form\Buttons\DeleteFeedbackButton</item>
+            <item name="getBack" xsi:type="string">SportStore\CustomerFeedback\Block\Adminhtml\Feedback\Form\Buttons\DeleteButton</item>
         </item>
     </argument>
 

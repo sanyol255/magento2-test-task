@@ -1,7 +1,7 @@
 <?php
 /**
  * Action Adminhtml/Feedback/Save for CustomerFeedback
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
@@ -66,7 +66,7 @@ class Save extends AbstractAction implements HttpPostActionInterface
      *
      * @return ResponseInterface
      */
-    public function execute()
+    public function execute() :ResponseInterface
     {
         $model = $this->feedbackInterfaceFactory->create();
         $data = $this->getRequest()->getParams();

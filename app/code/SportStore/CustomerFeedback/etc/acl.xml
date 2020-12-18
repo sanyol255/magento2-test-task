@@ -14,8 +14,6 @@
                     title="Manage Customer Feedback" sortOrder="30" />
                     <resource id="SportStore_CustomerFeedback::feedback_delete" translate="title"
                               title="Delete feedback" sortOrder="40" />
-<!--                    <resource id="SportStore_CustomerFeedback::feedback_status" translate="title"-->
-<!--                              title="Change feedback status" sortOrder="50" />-->
                     <resource id="SportStore_CustomerFeedback::feedback_save" translate="title"
                               title="Save customer feedback" sortOrder="60" />
                 </resource>

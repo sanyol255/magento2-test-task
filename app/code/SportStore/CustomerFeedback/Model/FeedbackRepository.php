@@ -54,7 +54,8 @@ class FeedbackRepository implements FeedbackRepositoryInterface
     protected $searchResultsFactory;
 
     /**
-     * FeedbackRepository constructor.
+     * FeedbackRepository constructor
+     *
      * @param FeedbackInterfaceFactory $modelFactory
      * @param ResourceModel $resourceModel
      * @param CollectionFactory $collectionFactory
@@ -79,6 +80,7 @@ class FeedbackRepository implements FeedbackRepositoryInterface
      * Getting data by id
      *
      * @param int $id
+     *
      * @return FeedbackInterface
      * @throws NoSuchEntityException
      */
@@ -96,6 +98,7 @@ class FeedbackRepository implements FeedbackRepositoryInterface
      * Getting list of feedbacks
      *
      * @param SearchCriteriaInterface $criteria
+     *
      * @return SearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $criteria) : SearchResultsInterface
@@ -142,6 +145,7 @@ class FeedbackRepository implements FeedbackRepositoryInterface
      * Save data method
      *
      * @param FeedbackInterface $model
+     *
      * @return FeedbackInterface
      * @throws \Magento\Framework\Exception\AlreadyExistsException
      */

@@ -52,6 +52,7 @@ class FeedbackActions extends Column
      * Setting data source for actions column
      *
      * @param array $dataSource
+     *
      * @return array
      */
     public function prepareDataSource(array $dataSource) : array
@@ -59,6 +60,15 @@ class FeedbackActions extends Column
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
                 $item[$this->getName()] = [
+                    'manage' => [
+                        'href' => $this->urlBuilder->getUrl(
+                            $this->getData('config/manageUrl'),
+                            [
+                                $this->getData('config/idUrlParam') => $item['feedback_id']
+                            ]
+                        ),
+                        'label' => __('Manage feedback')
+                    ],
                     'delete' => [
                         'href' => $this->urlBuilder->getUrl(
                             $this->getData('config/deleteUrl'),
@@ -68,15 +78,6 @@ class FeedbackActions extends Column
                         ),
                         'label' => __('Delete Feedback')
                     ],
-                    'manage' => [
-                        'href' => $this->urlBuilder->getUrl(
-                            $this->getData('config/manageUrl'),
-                            [
-                                $this->getData('config/idUrlParam') => $item['feedback_id']
-                            ]
-                        ),
-                        'label' => __('Manage feedback')
-                    ]
                 ];
             }
         }

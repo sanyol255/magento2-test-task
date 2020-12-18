@@ -71,7 +71,7 @@ class DataProvider extends AbstractDataProvider
      *
      * @return array
      */
-    public function getData()
+    public function getData() : array
     {
         if (!empty($this->_loadedData)) {
             return $this->_loadedData;
@@ -79,8 +79,8 @@ class DataProvider extends AbstractDataProvider
 
         $this->collection->addFieldToFilter($this->getPrimaryFieldName(), $this->request->getParam($this->getRequestFieldName()));
 
-        foreach ($this->getCollection() as $feedback) {
-            $this->_loadedData[$feedback->getId()]['feedback'] = $feedback->getData();
+        foreach ($this->getCollection() as $item) {
+            $this->_loadedData[$item->getId()] = $item->getData();
         }
 
         return $this->_loadedData;

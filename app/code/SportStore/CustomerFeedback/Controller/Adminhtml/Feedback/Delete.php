@@ -13,7 +13,7 @@ use Magento\Backend\App\AbstractAction;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use SportStore\CustomerFeedback\Api\FeedbackRepositoryInterface;
-use Magento\Framework\App\ResponseInterface;
+use SportStore\CustomerFeedback\Api\Data\FeedbackInterface;
 
 /**
  * Class Delete
@@ -35,7 +35,7 @@ class Delete extends AbstractAction implements HttpGetActionInterface
     protected $feedbackRepository;
 
     /**
-     * Delete constructor.
+     * Delete constructor
      *
      * @param Context $context
      * @param FeedbackRepositoryInterface $feedbackRepository
@@ -53,7 +53,7 @@ class Delete extends AbstractAction implements HttpGetActionInterface
      */
     public function execute()
     {
-        $this->feedbackRepository->deleteById($this->getRequest()->getParam('feedback_id'));
+        $this->feedbackRepository->deleteById($this->getRequest()->getParam(FeedbackInterface::ID));
         $this->_redirect('customerfeed/feedback/index');
         $this->messageManager->addNoticeMessage(__('Feedback was successfully deleted'));
     }

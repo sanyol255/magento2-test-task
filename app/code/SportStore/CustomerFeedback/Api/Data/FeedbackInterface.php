@@ -1,7 +1,7 @@
 <?php
 /**
  *Interface for Feedback Model
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
@@ -94,6 +94,7 @@ interface FeedbackInterface
      * Setting customer first name
      *
      * @param string $firstname
+     *
      * @return $this
      */
     public function setFirstname(string $firstname) : self;
@@ -102,6 +103,7 @@ interface FeedbackInterface
      * Setting customer last name
      *
      * @param string $lastname
+     *
      * @return $this
      */
     public function setLastname(string $lastname) : self;
@@ -110,6 +112,7 @@ interface FeedbackInterface
      * Setting customer age
      *
      * @param int $age
+     *
      * @return $this
      */
     public function setAge(int $age) : self;
@@ -118,6 +121,7 @@ interface FeedbackInterface
      * Setting customer email
      *
      * @param string $email
+     *
      * @return $this
      */
     public function setEmail(string $email) : self;
@@ -126,6 +130,7 @@ interface FeedbackInterface
      * Setting title of customer feedback
      *
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle(string $title) : self;
@@ -133,6 +138,7 @@ interface FeedbackInterface
      * Setting customer feedback message
      *
      * @param string $message
+     *
      * @return $this
      */
     public function setMessage(string $message) : self;
@@ -141,6 +147,7 @@ interface FeedbackInterface
      * Setting status of customer feedback - 9 (not answered) by default in db_schema
      *
      * @param int $status
+     *
      * @return $this
      */
     public function setStatus(int $status) : self;
@@ -149,6 +156,7 @@ interface FeedbackInterface
      * Setting answer to customer feedback
      *
      * @param string $answer
+     *
      * @return $this
      */
     public function setAnswer(string $answer) : self;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Block for getting action url for storing data from form to database
+ * Block for rendering feedback details page
 
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
@@ -17,6 +17,7 @@ use SportStore\CustomerFeedback\Model\StatusOptions;
 
 /**
  * Class FeedbackDetailsBlock
+ *
  * @package SportStore\CustomerFeedback\Block\Adminhtml
  */
 class FeedbackDetailsBlock extends Template
@@ -54,9 +55,9 @@ class FeedbackDetailsBlock extends Template
     /**
      * Getting model data
      *
-     * @return mixed
+     * @return FeedbackInterface
      */
-    public function getModel()
+    public function getModel() : FeedbackInterface
     {
         if (is_null($this->_model)) {
             $this->_model = $this->repository->getById($this->getRequest()->getParam(FeedbackInterface::ID));

@@ -1,7 +1,7 @@
 <?php
 /**
  *Interface for Feedback Repository
-
+ *
  * @category  SportStore
  * @package   SportStore\CustomerFeedback
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
@@ -24,6 +24,7 @@ interface FeedbackRepositoryInterface
      * Method for getting data by id
      *
      * @param int $id
+     *
      * @return FeedbackInterface
      */
     public function getById(int $id) : FeedbackInterface;
@@ -32,6 +33,7 @@ interface FeedbackRepositoryInterface
      * Method for getting list of data specified by search criteria
      *
      * @param SearchCriteriaInterface $criteria
+     *
      * @return SearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $criteria) : SearchResultsInterface;
@@ -54,6 +56,7 @@ interface FeedbackRepositoryInterface
      * Method for saving data
      *
      * @param FeedbackInterface $model
+     *
      * @return FeedbackInterface
      */
     public function save(FeedbackInterface $model) : FeedbackInterface;

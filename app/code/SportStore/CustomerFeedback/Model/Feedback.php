@@ -9,7 +9,11 @@
  */
 namespace SportStore\CustomerFeedback\Model;
 
+use Magento\Framework\Data\Collection\AbstractDb;
 use Magento\Framework\Model\AbstractModel;
+use Magento\Framework\Model\Context;
+use Magento\Framework\Model\ResourceModel\AbstractResource;
+use Magento\Framework\Registry;
 use SportStore\CustomerFeedback\Api\Data\FeedbackInterface;
 use SportStore\CustomerFeedback\Model\ResourceModel\Feedback as ResourceModel;
 
@@ -19,6 +23,27 @@ use SportStore\CustomerFeedback\Model\ResourceModel\Feedback as ResourceModel;
  */
 class Feedback extends AbstractModel implements FeedbackInterface
 {
+    /**
+     * Feedback constructor
+     *
+     * @param Context $context
+     * @param Registry $registry
+     * @param AbstractResource|null $resource
+     * @param AbstractDb|null $resourceCollection
+     * @param FeedbackValidator $feedbackValidator
+     * @param array $data
+     */
+    public function __construct(
+        Context $context,
+        Registry $registry,
+        AbstractResource $resource = null,
+        AbstractDb $resourceCollection = null,
+        FeedbackValidator $feedbackValidator,
+        array $data = []
+    ) {
+        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+        $this->_validatorBeforeSave = $feedbackValidator;
+    }
     /**
      *Feedback Model initialization with resource model and setting id field name
      */
@@ -33,6 +58,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * Setting customer first name
      *
      * @param string $firstname
+     *
      * @return FeedbackInterface
      */
     public function setFirstname(string $firstname): FeedbackInterface
@@ -44,6 +70,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * Setting customer last name
      *
      * @param string $lastname
+     *
      * @return FeedbackInterface
      */
     public function setLastname(string $lastname): FeedbackInterface
@@ -55,6 +82,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * Setting customer age
      *
      * @param int $age
+     *
      * @return FeedbackInterface
      */
     public function setAge(int $age): FeedbackInterface
@@ -66,6 +94,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * Setting customer email
      *
      * @param string $email
+     *
      * @return FeedbackInterface
      */
     public function setEmail(string $email): FeedbackInterface
@@ -77,6 +106,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * SAetting title of the feedback
      *
      * @param string $title
+     *
      * @return FeedbackInterface
      */
     public function setTitle(string $title): FeedbackInterface
@@ -88,6 +118,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * Setting feedback message
      *
      * @param string $message
+     *
      * @return FeedbackInterface
      */
     public function setMessage(string $message): FeedbackInterface
@@ -99,6 +130,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * Setting feedback status - 9 (not answered) by default in db_schema
      *
      * @param int $status
+     *
      * @return FeedbackInterface
      */
     public function setStatus(int $status): FeedbackInterface
@@ -110,6 +142,7 @@ class Feedback extends AbstractModel implements FeedbackInterface
      * Setting admin answer to customer feedback
      *
      * @param string $answer
+     *
      * @return FeedbackInterface
      */
     public function setAnswer(string $answer): FeedbackInterface
